@@ -42,7 +42,7 @@ import sourcebaeLogo from './assets/company_logo/sourcebae_logo.png';
 
 // Education Section Logo's
 
-import davvlogo from './assets/education_logo/DAVV_logo.webp';
+
 
 // Project Section Logo's
 import githubdetLogo from './assets/work_logo/github_det.png';
@@ -179,33 +179,33 @@ export const SkillsInfo = [
     //   desc: "I have completed my Master's degree (MCA) in Computer Applications from GLA University, Mathura. During my time at GLA, I gained a strong foundation in programming, software development, and computer science principles. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering. I actively participated in various workshops and technical events, which enhanced my skills and knowledge. My experience at GLA University has been instrumental in shaping my technical abilities and professional growth.",
     //   degree: "Master of Computer Applications - MCA",
     // },
-    {
-      id: 1,
-      img: davvlogo,
-      school: "Institue of Engineering & Technology,DAVV,Indore",
-      date: "Sept 2020 - Aug 2024",
-      grade: "8.1 CGPA",
-      desc: "I completed my Bachelor's degree in Information Technology from IET DAVV  College, Indore. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development. My time at IET DAVV  College allowed me to work on projects that applied theoretical concepts to real-world problems.",
-      degree: "Bachelor of Engineering - BE",
-    },
-    {
-      id: 2,
-     // img: vpsLogo,
-      school: "Sunflower School, Sausar",
-      date: "Apr 2019 - March 2020",
-      grade: "87.2%",
-      desc: "I completed my class 12 education from Sunflower  School, Sausar under the MP board, where I studied Physics, Chemistry, and Mathematics (PCM) .",
-      degree: "CBSE(XII) - PCM ",
-    },
-    {
-      id: 3,
-      //img: vpsLogo,
-      school: "Subhash Montessori Public School, Sausar",
-      date: "Apr 2017 - March 2018",
-      grade: "81.8%",
-      desc: "I completed my class 10 education from Subhash Montessori Public School, Sausar, under the CBSE board, where I studied Science with Computer.",
-      degree: "CBSE(X), Science with Computer Application",
-    },
+    // {
+    //   id: 1,
+    //   img: davvlogo,
+    //   school: "Institue of Engineering & Technology,DAVV,Indore",
+    //   date: "Sept 2020 - Aug 2024",
+    //   grade: "8.1 CGPA",
+    //   desc: "I completed my Bachelor's degree in Information Technology from IET DAVV  College, Indore. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development. My time at IET DAVV  College allowed me to work on projects that applied theoretical concepts to real-world problems.",
+    //   degree: "Bachelor of Engineering - BE",
+    // },
+    // {
+    //   id: 2,
+    //  // img: vpsLogo,
+    //   school: "Sunflower School, Sausar",
+    //   date: "Apr 2019 - March 2020",
+    //   grade: "87.2%",
+    //   desc: "I completed my class 12 education from Sunflower  School, Sausar under the MP board, where I studied Physics, Chemistry, and Mathematics (PCM) .",
+    //   degree: "CBSE(XII) - PCM ",
+    // },
+    // {
+    //   id: 3,
+    //   //img: vpsLogo,
+    //   school: "Subhash Montessori Public School, Sausar",
+    //   date: "Apr 2017 - March 2018",
+    //   grade: "81.8%",
+    //   desc: "I completed my class 10 education from Subhash Montessori Public School, Sausar, under the CBSE board, where I studied Science with Computer.",
+    //   degree: "CBSE(X), Science with Computer Application",
+    // },
   ];
   
   export const projects = [
