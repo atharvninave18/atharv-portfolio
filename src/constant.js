@@ -83,7 +83,7 @@ export const SkillsInfo = [
       { name: 'MySQL', logo: mysqlLogo },
       { name: 'MongoDB', logo: mongodbLogo },
       // { name: 'Firebase', logo: firebaseLogo },
-      //{ name: 'PostgreSQL', logo: postgreLogo },
+      { name: 'PostgreSQL', logo: postgreLogo },
     ],
   },
   {
@@ -95,7 +95,7 @@ export const SkillsInfo = [
       // { name: 'Python', logo: pythonLogo },
       // { name: 'C-Sharp', logo: csharpLogo },
       { name: 'JavaScript', logo: javascriptLogo },
-      // { name: 'TypeScript', logo: typescriptLogo },
+       { name: 'TypeScript', logo: typescriptLogo },
     ],
   },
   {
@@ -167,6 +167,7 @@ export const SkillsInfo = [
         "Material UI",
       ],
     },
+    
   ];
   
   export const education = [
