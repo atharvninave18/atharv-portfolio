@@ -6,7 +6,7 @@ import profileImage from '../assets/profile3.png';
 const About = () => {
   return (
     <section
-  id="about"
+  id="hero"
   className="relative flex flex-col pt-30 pb-52 px-[3vw] md:px-[3vw] lg:px-[13vw] font-sans mt-16 md:mt-24 lg:mt-32"
 >
 
