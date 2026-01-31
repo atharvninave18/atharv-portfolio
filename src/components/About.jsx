@@ -31,8 +31,8 @@ const About = () => {
             </span>
           </h1>
           {/* Skills Heading with Typing Effect */}
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 text-gradient leading-tight mt-2">
-            <span className="text-gradient">I am a </span>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2  leading-tight mt-2">
+            <span >I am a </span>
             <ReactTypingEffect
               text={[
                 'Fullstack Developer',
