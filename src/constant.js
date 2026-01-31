@@ -110,35 +110,19 @@ export const SkillsInfo = [
     ],
   },
 ];
-
-export const experiences = [
-  // {
-  //   id: 0,
-  //   img: webverseLogo,
-  //   role: "Fullstack Developer",
-  //   company: "Webverse Digital",
-  //   date: "April 2024 - Present",
-  //   desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
-  //   skills: [
-  //     "HTML",
-  //     "CSS",
-  //     "JavaScript",
-  //     "React JS",
-  //     "TypeScript",
-  //     "Node JS",
-  //     "Tailwind CSS",
-  //     "MongoDb",
-  //     "Redux",
-  //     " Next Js",
-  //   ],
-  // },
+export const EXPERIENCES = [
   {
-    id: 1,
-    img: gammastackLogo,
-    role: "Fullstack Engineer",
-    company: "GammaStack",
+    title: "Fullstack Engineer",
+    company_name: "GammaStack",
+    icon: gammastackLogo,
+    iconBg: "#383E56",
     date: "June 2024 - Present",
-    desc: "Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using technologies such as HTML, CSS, JavaScript, PHP, SQL, Bootstrap, and ReactJS. Worked closely with the team to deliver responsive, high-performance web applications and improve user experience through seamless integration of various technologies.",
+    points: [
+      "Contributed to innovative projects as a Fullstack Engineer.",
+      "Led frontend and backend development using HTML, CSS, JavaScript, PHP, SQL, Bootstrap, ReactJS, and Next.js.",
+      "Collaborated closely with the team to deliver responsive, high-performance web applications.",
+      "Improved user experience through seamless integration of multiple technologies.",
+    ],
     skills: [
       "ReactJS",
       "Redux",
@@ -147,18 +131,32 @@ export const experiences = [
       "HTML",
       "CSS",
       "SQL",
+      "Next.js",
     ],
   },
   {
-    id: 2,
-    img: sourcebaeLogo,
-    role: "Frontend Intern",
-    company: "Sourcebae",
+    title: "Frontend Intern",
+    company_name: "Sourcebae",
+    icon: sourcebaeLogo,
+    iconBg: "#1F2937",
     date: "Feb 2024 - May 2024",
-    desc: "Worked as a Frontend Developer Intern, designing and implementing scalable UI components and responsive websites using HTML, CSS, JavaScript, Bootstrap, and Material UI. Collaborated with the design team to translate wireframes and prototypes from Figma into interactive, user-friendly web pages.",
-    skills: ["HTML", "CSS", "Javascript", "Bootstrap", "Figma", "Material UI"],
+    points: [
+      "Designed and implemented scalable UI components using HTML, CSS, and JavaScript.",
+      "Built responsive websites using Bootstrap and Material UI.",
+      "Translated Figma designs into interactive, user-friendly web pages.",
+      "Collaborated with designers and developers to improve UI consistency.",
+    ],
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "Material UI",
+      "Figma",
+    ],
   },
 ];
+
 
 export const education = [
   // {
@@ -198,11 +196,11 @@ export const education = [
   //   degree: "CBSE(X), Science with Computer Application",
   // },
 ];
-export const EXPERIENCES = [
+export const EXPERIENCESS = [
   {
     title: "React.js Developer",
     company_name: "Starbucks",
-    icon: gammastackLogo,
+    icon: sourcebaeLogo,
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
     points: [
@@ -210,6 +208,15 @@ export const EXPERIENCES = [
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+    skills: [
+      "ReactJS",
+      "Redux",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "SQL",
     ],
   },
   {
@@ -224,6 +231,15 @@ export const EXPERIENCES = [
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
+    skills: [
+      "ReactJS",
+      "Redux",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "SQL",
+    ],
   },
   {
     title: "Web Developer",
@@ -237,6 +253,15 @@ export const EXPERIENCES = [
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
+    skills: [
+      "ReactJS",
+      "Redux",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "SQL",
+    ],
   },
   {
     title: "Full stack Developer",
@@ -249,6 +274,15 @@ export const EXPERIENCES = [
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+    skills: [
+      "ReactJS",
+      "Redux",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "SQL",
     ],
   },
 ] ;

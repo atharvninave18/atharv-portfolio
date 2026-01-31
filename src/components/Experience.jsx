@@ -122,62 +122,90 @@ import SectionWrapper from "../hoc/SectionWrapper";
 // Experience Card
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: "#1d1836", color: "#fff" }}
-    contentArrowStyle={{ borderRight: "7px solid #232631" }}
-    // date={experience.date}
-    iconStyle={{ background: experience.iconBg }}
+    contentStyle={{
+      background: "transparent",
+      boxShadow: "none",
+      padding: 0,
+    }}
+    contentArrowStyle={{ borderRight: "7px solid #8245ec" }}
+    iconStyle={{
+      background: "#1f2937",
+      border: "4px solid #8245ec",
+    }}
     icon={
-       <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
-              <img
-                src={experience.icon}
-                 alt={experience.company_name}                className="w-full h-full object-cover rounded-full"
-               />
-            </div>
+      <div className="w-full h-full flex justify-center items-center">
+        <img
+          src={experience.icon}
+          alt={experience.company_name}
+          className="w-[70%] h-[70%] object-cover rounded-full"
+        />
+      </div>
     }
   >
-    {/* Title */}
-    {/* <div>
-      <h3 className="text-white text-[24px] font-bold">
-        {experience.title}
-      </h3>
-      <p
-        className="text-secondary text-[16px] font-semibold"
-        style={{ margin: 0 }}
-      >
-        {experience.company_name}
-      </p>
-    </div> */}
-     <div className="flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                      {experience.title}
-                    </h3>
-                    <h4 className="text-md sm:text-sm text-gray-300">
-                       {experience.company_name}
-                    </h4>
-                  </div>
-                  {/* Date at the bottom */}
-                   <p className="text-sm text-gray-500 mt-2">{experience.date}</p>
-                </div>
-             
+    {/* Card */}
+    <div className="w-full p-6 sm:p-8 rounded-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] transform transition-transform duration-300 hover:scale-105">
+      
+      {/* Header */}
+      <div className="flex items-center space-x-6">
+        {/* Logo */}
+        <div className="w-16 h-16 bg-white rounded-md overflow-hidden">
+          <img
+            src={experience.icon}
+            alt={experience.company_name}
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-    {/* Experience Points */}
-    <ul className="mt-5 list-disc ml-5 space-y-2">
-      {experience.points.map((point, i) => (
-        <li
-          key={`experience-point-${i}`}
-          className="text-white-100 text-[14px] pl-1 tracking-wider"
-        >
-          {point}
-        </li>
-      ))}
-    </ul>
+        {/* Text */}
+        <div className="flex flex-col">
+          <h3 className="text-xl sm:text-2xl font-semibold text-white">
+            {experience.title}
+          </h3>
+          <h4 className="text-sm text-gray-300">
+            {experience.company_name}
+          </h4>
+          <p className="text-sm text-gray-500 mt-1">
+            {experience.date}
+          </p>
+        </div>
+      </div>
+
+      {/* Points */}
+      <ul className="mt-4 list-disc ml-5 space-y-2">
+        {experience.points.map((point, i) => (
+          <li
+            key={i}
+            className="text-gray-400 text-sm tracking-wide"
+          >
+            {point}
+          </li>
+        ))}
+      </ul>
+      <div className="mt-4">
+                 <h5 className="font-medium text-white">Skills:</h5>
+                <ul className="flex flex-wrap mt-2">
+                   {experience.skills.map((skill, index) => (
+                    <li
+                      key={index}
+                      className="bg-[#8245ec] text-gray-300 px-4 py-1 text-xs sm:text-sm rounded-lg mr-2 mb-2 border border-gray-400"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+               </ul>
+                           </div>
+    </div>
   </VerticalTimelineElement>
 );
+
 
 // Experience Section
 const Experience = () => {
   return (
+       <section
+       id="experience"
+       className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-2"
+   >
     <SectionWrapper idName="work">
       <>
         {/* Title */}
@@ -189,7 +217,7 @@ const Experience = () => {
             Work Experience.
           </h2> */}
           <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
+        <h2 className="text-4xl font-bold text-gradient">EXPERIENCE</h2>
          <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
        <p className="text-gray-400 mt-4 text-lg font-semibold">
          A collection of my work experience and the roles I have taken in
@@ -207,6 +235,7 @@ const Experience = () => {
         </div>
       </>
     </SectionWrapper>
+    </section>
   );
 };
 

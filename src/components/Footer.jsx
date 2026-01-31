@@ -17,7 +17,7 @@ const Footer = () => {
         <h2 className="text-xl font-semibold text-purple-500">Atharv Ninave</h2>
 
         {/* Navigation Links - Responsive */}
-        <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-6 mt-4">
+        {/* <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-6 mt-4 text-gradient">
           {[
             { name: "About", id: "about" },
             { name: "Skills", id: "skills" },
@@ -28,19 +28,20 @@ const Footer = () => {
             <button
               key={index}
               onClick={() => handleScroll(item.id)}
-              className="hover:text-purple-500 text-sm sm:text-base my-1"
+              className="hover:text-purple-500 text-sm sm:text-base my-1 text-gradient"
             >
               {item.name}
             </button>
           ))}
-        </nav>
+        </nav> */}
 
         {/* Social Media Icons - Responsive */}
         
         {/* Copyright Text */}
-        <p className="text-sm text-gray-400 mt-6">
-          © 2025 Atharv Ninave. All rights reserved.
-        </p>
+       <p className="text-sm text-gray-400 mt-6">
+  © {new Date().getFullYear()} Atharv Ninave. All rights reserved.
+</p>
+
       </div>
     </footer>
   );
