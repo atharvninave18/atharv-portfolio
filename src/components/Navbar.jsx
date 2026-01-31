@@ -26,6 +26,18 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav
       className={cn(
@@ -80,24 +92,26 @@ export const Navbar = () => {
         {/* mobile nav menu */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-transform duration-300 md:hidden",
+            "fixed inset-0 w-screen h-screen bg-background backdrop-blur-md z-30 flex flex-col items-center justify-start pt-24 md:hidden",
+            "transition-transform duration-300",
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="flex flex-col items-center space-y-8 text-xl">
+          <div className="flex flex-col items-center space-y-8 text-xl w-full px-4">
             {navItems.map((item, key) => (
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                className="text-foreground/80 hover:text-primary transition-colors duration-300 w-full text-center py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
             {/* Theme toggle inside mobile menu */}
-            <ThemeToggle />
+            <div className="mt-8">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
