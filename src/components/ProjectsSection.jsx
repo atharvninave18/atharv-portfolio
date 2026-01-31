@@ -164,6 +164,7 @@ const ProjectCard = ({
 // Works Section
 export const ProjectsSection = () => {
   return (
+     <section id="projects" >
     <SectionWrapper>
       <>
         {/* Title */}
@@ -190,6 +191,7 @@ export const ProjectsSection = () => {
         </div>
       </>
     </SectionWrapper>
+   </section>
   );
 };
 
