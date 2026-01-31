@@ -286,6 +286,152 @@ export const EXPERIENCESS = [
     ],
   },
 ] ;
+// Projects
+export const PROJECTS = [
+  {
+  name: "Realtime Chat Application",
+  description:
+    "A responsive realtime chat application built with React, Node.js, and Socket.io, enabling instant messaging, typing indicators, and user presence tracking. Features include chat rooms, message persistence, and an intuitive UI optimized for seamless communication.",
+  tags: [
+    { name: "react", color: "blue-text-gradient" },
+    { name: "node.js", color: "green-text-gradient" },
+    { name: "socket.io", color: "pink-text-gradient" },
+    { name: "express", color: "blue-text-gradient" },
+  ],
+  image: chatApp,
+  source_code_link: "#",
+  live_site_link: "#",
+},
+{
+  name: "Casino  Admin Dashboard",
+ description:
+  "An interactive casino gaming admin dashboard built with React to monitor player statistics, manage games, and track performance insights using mock data. The platform includes modular UI components, theme toggling, and data visualization for a scalable admin experience.",
+
+  tags: [
+    { name: "react", color: "blue-text-gradient" },
+    { name: "mui", color: "pink-text-gradient" },
+    { name: "nivo charts", color: "green-text-gradient" },
+    { name: "formik", color: "blue-text-gradient" },
+    { name: "yup", color: "pink-text-gradient" },
+    
+  ],
+  image: adminDashboard,
+  source_code_link: "#",
+  live_site_link: "#",
+}
+,
+
+  // {
+  //   name: "Golds Gym",
+  //   description:
+  //     "Web application that enables users to search for fitness exercises, effective personalized positions, and recommends new exercises based on their personal preferences.",
+  //   tags: [
+  //     {
+  //       name: "react",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "rapidapi",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "tailwindcss",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: adminDashboard,
+  //   source_code_link: "https://github.com/sanidhyy/fitness-app",
+  //   live_site_link: "https://fitness-gym-react.netlify.app",
+  // },
+  // {
+  //   name: "Shoppy",
+  //   description:
+  //     "The most personalised admin dashboard web application that allows enables users to choose customized themes and dark mode with different pages and variety of charts.",
+  //   tags: [
+  //     {
+  //       name: "react",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "syncfusion",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "scss",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: adminDashboard,
+  //   source_code_link: "https://github.com/sanidhyy/admin-dashboard",
+  //   live_site_link: "https://shoppy-dashboard-react.netlify.app",
+  // },
+  // {
+  //   name: "TikTok Clone",
+  //   description:
+  //     "A Next JS Web Application that enables users to upload videos of any length and size, create accounts and connect with other people just like any other social media.",
+  //   tags: [
+  //     {
+  //       name: "nextjs",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "nodejs",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "tailwindcss",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: adminDashboard,
+  //   source_code_link: "https://github.com/sanidhyy/tiktok-clone",
+  //   live_site_link: "https://tiktok-clone-react.vercel.app",
+  // },
+  // {
+  //   name: "Cryptoverse",
+  //   description:
+  //     "Best Cryptocurrency web application that allows users to view price, market cap and daily change in realtime for almost every cryptocurrency in the world.",
+  //   tags: [
+  //     {
+  //       name: "react",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "rapidapi",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "css",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: adminDashboard,
+  //   source_code_link: "https://github.com/sanidhyy/crypto-app",
+  //   live_site_link: "https://reactjscryptoapp.netlify.app",
+  // },
+  // {
+  //   name: "Travel Advisor",
+  //   description:
+  //     "Web application that enables you to view your nearby restaurants, hotels and attractions which can be sorted by ratings, price and much more.",
+  //   tags: [
+  //     {
+  //       name: "react",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "rapidapi",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "material-ui",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: chatApp,
+  //   source_code_link: "https://github.com/sanidhyy/travel-advisor",
+  //   live_site_link: "https://travel-advisor-reactjs.netlify.app",
+  // },
+] 
 export const projects = [
   {
     id: 1,
