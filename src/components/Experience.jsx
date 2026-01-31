@@ -122,6 +122,7 @@ import SectionWrapper from "../hoc/SectionWrapper";
 // Experience Card
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
+    className="experience-element"
     contentStyle={{
       background: "transparent",
       boxShadow: "none",
@@ -137,18 +138,18 @@ const ExperienceCard = ({ experience }) => (
         <img
           src={experience.icon}
           alt={experience.company_name}
-          className="w-[70%] h-[70%] object-cover rounded-full"
+          className="w-6 h-6 sm:w-[70%] sm:h-[70%] object-cover rounded-full"
         />
       </div>
     }
   >
     {/* Card */}
-    <div className="w-full p-6 sm:p-8 rounded-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] transform transition-transform duration-300 hover:scale-105">
+    <div className="w-full p-4 sm:p-8 rounded-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] transform transition-transform duration-300 hover:scale-105">
       
       {/* Header */}
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center justify-center sm:justify-start space-x-6">
         {/* Logo */}
-        <div className="w-16 h-16 bg-white rounded-md overflow-hidden">
+        <div className="hidden sm:block w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-md overflow-hidden">
           <img
             src={experience.icon}
             alt={experience.company_name}
@@ -157,16 +158,12 @@ const ExperienceCard = ({ experience }) => (
         </div>
 
         {/* Text */}
-        <div className="flex flex-col">
-          <h3 className="text-xl sm:text-2xl font-semibold text-white">
+        <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+          <h3 className="text-xl sm:text-2xl font-semibold text-white text-center sm:text-left">
             {experience.title}
           </h3>
-          <h4 className="text-sm text-gray-300">
-            {experience.company_name}
-          </h4>
-          <p className="text-sm text-gray-500 mt-1">
-            {experience.date}
-          </p>
+          <h4 className="text-sm text-gray-300">{experience.company_name}</h4>
+          <p className="text-sm text-gray-500 mt-1">{experience.date}</p>
         </div>
       </div>
 
@@ -181,7 +178,7 @@ const ExperienceCard = ({ experience }) => (
           </li>
         ))}
       </ul>
-      <div className="mt-4">
+      {/* <div className="mt-4">
                  <h5 className="font-medium text-white">Skills:</h5>
                 <ul className="flex flex-wrap mt-2">
                    {experience.skills.map((skill, index) => (
@@ -193,7 +190,7 @@ const ExperienceCard = ({ experience }) => (
                     </li>
                   ))}
                </ul>
-                           </div>
+                           </div> */}
     </div>
   </VerticalTimelineElement>
 );
@@ -202,10 +199,10 @@ const ExperienceCard = ({ experience }) => (
 // Experience Section
 const Experience = () => {
   return (
-       <section
-       id="experience"
-       className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-2"
-   >
+         <section
+         id="experience"
+         className="py-16 font-sans bg-skills-gradient clip-path-custom-2"
+       >
     <SectionWrapper idName="work">
       <>
         {/* Title */}

@@ -112,7 +112,7 @@ export const SkillsInfo = [
 ];
 export const EXPERIENCES = [
   {
-    title: "Fullstack Engineer",
+    title: "Solution Engineer",
     company_name: "GammaStack",
     icon: gammastackLogo,
     iconBg: "#383E56",

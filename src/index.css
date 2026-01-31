@@ -127,6 +127,13 @@
   text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
 }
 
+@utility text-gradient {
+  background: linear-gradient(90deg, hsl(var(--primary)), #8b5cf6 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @utility card-hover {
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
@@ -159,4 +166,65 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+/* Responsive helpers */
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile-first container padding */
+.container {
+  margin-inline: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Prevent text-size jumping on iOS */
+html, body {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Responsive tweaks for react-vertical-timeline-component */
+@media (max-width: 640px) {
+  .vertical-timeline {
+    padding: 0 8px;
+  }
+
+  .vertical-timeline::before {
+    left: 8px;
+  }
+
+
+  /* Remove the icon on small screens and shift content left */
+  .vertical-timeline-element-icon {
+    display: none !important;
+  }
+
+  .vertical-timeline-element-content {
+    margin-left: 24px !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+
+  .vertical-timeline-element-content::before {
+    display: none;
+  }
+
+  /* Target our element to reduce extra side padding */
+  .experience-element .w-full {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
