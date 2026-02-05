@@ -112,18 +112,18 @@ export const SkillsInfo = [
 ];
 export const EXPERIENCES = [
   {
-    title: "Solution Engineer",
-    company_name: "GammaStack",
+    role: "Solution Engineer",
+    company: "GammaStack",
     icon: gammastackLogo,
     iconBg: "#383E56",
-    date: "June 2024 - Present",
-    points: [
+    period: "June 2024 - Present",
+    description: [
       "Contributed to innovative projects as a Fullstack Engineer.",
       "Led frontend and backend development using HTML, CSS, JavaScript, PHP, SQL, Bootstrap, ReactJS, and Next.js.",
       "Collaborated closely with the team to deliver responsive, high-performance web applications.",
       "Improved user experience through seamless integration of multiple technologies.",
     ],
-    skills: [
+    technologies: [
       "ReactJS",
       "Redux",
       "JavaScript",
@@ -133,30 +133,24 @@ export const EXPERIENCES = [
       "SQL",
       "Next.js",
     ],
+     current: true,
   },
   {
-    title: "Frontend Intern",
-    company_name: "Sourcebae",
+    role: "Software Intern",
+    company: "Sourcebae",
     icon: sourcebaeLogo,
     iconBg: "#1F2937",
-    date: "Feb 2024 - May 2024",
-    points: [
+    period: "Feb 2024 - May 2024",
+    description: [
       "Designed and implemented scalable UI components using HTML, CSS, and JavaScript.",
       "Built responsive websites using Bootstrap and Material UI.",
       "Translated Figma designs into interactive, user-friendly web pages.",
       "Collaborated with designers and developers to improve UI consistency.",
     ],
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Bootstrap",
-      "Material UI",
-      "Figma",
-    ],
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Material UI", "Figma"],
+     current: false,
   },
 ];
-
 
 export const education = [
   // {
@@ -285,41 +279,37 @@ export const EXPERIENCESS = [
       "SQL",
     ],
   },
-] ;
+];
 // Projects
 export const PROJECTS = [
   {
-  name: "Realtime Chat Application",
-  description:
-    "A responsive realtime chat application built with React, Node.js, and Socket.io, enabling instant messaging, typing indicators, and user presence tracking. Features include chat rooms, message persistence, and an intuitive UI optimized for seamless communication.",
-  tags: [
-    { name: "react", color: "blue-text-gradient" },
-    { name: "node.js", color: "green-text-gradient" },
-    { name: "socket.io", color: "pink-text-gradient" },
-    { name: "express", color: "blue-text-gradient" },
-  ],
-  image: chatApp,
-  source_code_link: "#",
-  live_site_link: "#",
-},
-{
-  name: "Casino  Admin Dashboard",
- description:
-  "An interactive casino gaming admin dashboard built with React to monitor player statistics, manage games, and track performance insights using mock data. The platform includes modular UI components, theme toggling, and data visualization for a scalable admin experience.",
+    title: "Realtime Chat Application",
+    description:
+      "A responsive realtime chat application built with React, Node.js, and Socket.io, enabling instant messaging, typing indicators, and user presence tracking. Features include chat rooms, message persistence, and an intuitive UI optimized for seamless communication.",
+   
+     tags: ["React", "Typescript", "NodeJS", "Socket.io", "Express"],
+    image: chatApp,
+    github: "#",
+    link: "#",
+  },
+  {
+    title: "Casino  Admin Dashboard",
+    description:
+      "An interactive casino gaming admin dashboard built with React to monitor player statistics, manage games, and track performance insights using mock data. The platform includes modular UI components, theme toggling, and data visualization for a scalable admin experience.",
 
-  tags: [
-    { name: "react", color: "blue-text-gradient" },
-    { name: "mui", color: "pink-text-gradient" },
-    { name: "nivo charts", color: "green-text-gradient" },
-    { name: "formik", color: "blue-text-gradient" },
-    { name: "yup", color: "pink-text-gradient" },
-    
-  ],
-  image: adminDashboard,
-  source_code_link: "#",
-  live_site_link: "#",
-}
-,
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "mui", color: "pink-text-gradient" },
+      { name: "nivo charts", color: "green-text-gradient" },
+      { name: "formik", color: "blue-text-gradient" },
+      { name: "yup", color: "pink-text-gradient" },
+    ],
+      tags: ["React", "MUI", "Nivo Charts", "Formik", "Yup", "Tailwind CSS"],
+    image: adminDashboard,
+    github: "#",
+    link: "#",
+  },
+ 
 
   // {
   //   name: "Golds Gym",
@@ -431,10 +421,10 @@ export const PROJECTS = [
   //   source_code_link: "https://github.com/sanidhyy/travel-advisor",
   //   live_site_link: "https://travel-advisor-reactjs.netlify.app",
   // },
-] 
+];
 export const projects = [
   {
-    id: 1,
+   
     title: "Casino Gaming Admin Dashboard",
     description:
       "An interactive casino gaming admin dashboard built with React and TypeScript to monitor player statistics, manage games, and track performance insights using mock data. The platform includes modular UI components, theme toggling, and data visualization for an intuitive and scalable admin experience.",
@@ -444,17 +434,26 @@ export const projects = [
     demoUrl: "#",
     githubUrl: "#",
   },
+  // {
+    
+  //   title: "Realtime Chat Application",
+  //   description:
+  //     "A responsive realtime chat application built with React, Node.js, and Socket.io, enabling instant messaging, typing indicators, and user presence tracking. Features include chat rooms, message persistence, and an intuitive UI optimized for seamless communication.",
+  //   image: chatApp,
+  //   tags: ["React", "Node.js", "Socket.io", "Express"],
+
+  //   demoUrl: "#",
+  //   githubUrl: "#",
+  // },
    {
-  id: 3,
-  title: "Realtime Chat Application",
-  description:
-    "A responsive realtime chat application built with React, Node.js, and Socket.io, enabling instant messaging, typing indicators, and user presence tracking. Features include chat rooms, message persistence, and an intuitive UI optimized for seamless communication.",
-  image: chatApp,
-  tags: ["React", "Node.js", "Socket.io", "Express"],
-  demoUrl: "#",
-  githubUrl: "#",
-}
-,
+    title: "Fintech Dashboard",
+    description:
+      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
+     image: chatApp,
+    tags: ["React", "Typescript", "NodeJS"],
+    link: "#",
+    github: "#",
+  },
   // {
   //   id: 2,
   //   title: "Movie Recommendation App",
@@ -525,4 +524,5 @@ export const projects = [
   //   github: "https://github.com/codingmastr/Image-Background-Remover",
   //   webapp: "https://removeyourbg.netlify.app/",
   // },
+  ,
 ];

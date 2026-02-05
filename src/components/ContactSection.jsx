@@ -14,6 +14,29 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastAction } from "@radix-ui/react-toast";
+import { Button } from "./ui/Button";
+
+const contactInfo = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "atharvninave18@gmail.com",
+    href: "mailto:atharvninave18@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "  +91 7999803623",
+    href: "tel:+917999803623",
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Indore, India",
+    href: "#",
+  },
+];
+
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,20 +63,20 @@ export const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "service_dxfxxdu",  // Replace with your EmailJS Service ID
-        "template_p4f72vp",  // Replace with your EmailJS Template ID
+        "service_dxfxxdu", // Replace with your EmailJS Service ID
+        "template_p4f72vp", // Replace with your EmailJS Template ID
         form.current,
-        "jFraNX4sG0vVHAFBg"  // Replace with your EmailJS Public Key
+        "jFraNX4sG0vVHAFBg", // Replace with your EmailJS Public Key
       )
       .then(
         () => {
           setIsSent(true);
           form.current.reset(); // Reset form fields after sending
-                toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-          
+          toast({
+            title: "Message sent!",
+            description:
+              "Thank you for your message. I'll get back to you soon.",
+          });
         },
         (error) => {
           console.error("Error sending message:", error);
@@ -66,95 +89,91 @@ export const ContactSection = () => {
             draggable: true,
             theme: "dark",
           });
-        }
+        },
       );
   };
 
-
   return (
-    <section id="contact" className="py-24 px-4 relative bg-secondary/30">
-      
-      <div className="container mx-auto max-w-5xl">
+    <section id="contact" className="py-24 px-4 relative ">
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+      </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary"> Touch</span>
-        </h2>
-
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out.
-          I'm always open to discussing new opportunities.
-        </p>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+            Get In <span className="text-primary"> Touch</span>
+          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+            Let's build{" "}
+            <span className="font-serif italic font-normal text-white">
+              something great.
+            </span>
+          </h2>
+          <p className="text-muted-foreground animate-fade-in animation-delay-200">
+            Have a project in mind? I'd love to hear about it. Send me a message
+            and let's discuss how we can work together.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">
-              {" "}
-              Contact Information
-            </h3>
-
-            <div className="space-y-6 flex flex-col items-center">
-              {/* Email */}
-
-
-              <div className="flex flex-col items-center space-y-2 text-center">
-                {/* Icon + Title in one row */}
-                <div className="flex items-center space-x-2">
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <Mail className="h-6 w-6 text-primary" />
-
-                  </div>
-                  <h4 className="font-medium">Email</h4>
+            <div className="space-y-6 animate-fade-in animation-delay-400">
+              <div className="glass rounded-3xl p-8">
+                <h3 className="text-xl font-semibold mb-6">
+                  Contact Information
+                </h3>
+                <div className="space-y-4">
+                  {contactInfo.map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.href}
+                      className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <item.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-muted-foreground">
+                          {item.label}
+                        </div>
+                        <div className="font-medium">{item.value}</div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
-
-                {/* Location text */}
-                <span className="text-muted-foreground hover:text-primary transition-colors">
-                  atharvninave18@gmail.com
-                </span>
               </div>
 
-
-              <div className="flex flex-col items-center space-y-2 text-center">
-                {/* Icon + Title in one row */}
-                <div className="flex items-center space-x-2">
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <h4 className="font-medium">Phone</h4>
+              {/* Availability Card */}
+              <div className="glass rounded-3xl p-8 border border-primary/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                  <span className="font-medium">Currently Available</span>
                 </div>
-
-                {/* Location text */}
-                <span className="text-muted-foreground hover:text-primary transition-colors">
-                  +91 7999803623
-                </span>
-              </div>
-
-              {/* Location */}
-              <div className="flex flex-col items-center space-y-2 text-center">
-                {/* Icon + Title in one row */}
-                <div className="flex items-center space-x-2">
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <h4 className="font-medium">Location</h4>
-                </div>
-
-                {/* Location text */}
-                <span className="text-muted-foreground hover:text-primary transition-colors">
-                  Indore, India
-                </span>
+                <p className="text-muted-foreground text-sm">
+                  I'm currently open to new opportunities and exciting projects.
+                  Whether you need a full-time engineer or a freelance
+                  consultant, let's talk!
+                </p>
               </div>
             </div>
-
-            <div className="pt-8">
+            {/* <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="https://www.linkedin.com/in/atharv-ninave-3604b31b8" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/atharv-ninave-3604b31b8"
+                  target="_blank"
+                >
                   <Linkedin />
                 </a>
                 <a href="https://x.com/atharvv1809" target="_blank">
                   <Twitter />
                 </a>
-                <a href="https://www.instagram.com/direct/t/17847392655208548" target="_blank">
+                <a
+                  href="https://www.instagram.com/direct/t/17847392655208548"
+                  target="_blank"
+                >
                   <Instagram />
                 </a>
                 <a
@@ -166,73 +185,91 @@ export const ContactSection = () => {
                   <FaGithub size={24} />
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-          // onSubmit={handleSubmit}
-          >
-            <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
+        
+            <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                    placeholder="Your Name.."
+                  />
+                </div>
 
-            <form ref={form} onSubmit={sendEmail} className="space-y-6">
-              <div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                    placeholder="Your Email..."
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                    placeholder="Subject"
+                  />
+                </div>
 
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Your Name.."
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    rows={5}
+                    id="message"
+                    name="message"
+                    required
+                    className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                    placeholder="Hello, I'd like to talk about..."
+                  />
+                </div>
 
-              <div>
-
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Your Email..."
-                />
-              </div>
-              <div>
-
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Subject"
-                />
-              </div>
-
-              <div>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus              :ring-primary resize-none"
-                  placeholder="Hello, I'd like to talk about..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
-                )}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send size={16} />
-              </button>
-            </form>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={cn(
+                    "cosmic-button w-full flex items-center justify-center gap-2",
+                  )}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                  <Send size={16} />
+                </Button>
+              </form>
+          
           </div>
         </div>
       </div>

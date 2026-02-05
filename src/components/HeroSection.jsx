@@ -1,43 +1,255 @@
-import { ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import {
+  ArrowRight,
+  ChevronDown,
+  Github,
+  Linkedin,
+  Twitter,
+  Download,
+} from "lucide-react";
+import { AnimatedBorderButton } from "../components/ui/AnimatedBorderButton";
+import Background from "../assets/hero-bg.jpg";
+import Profile from "../assets/profile2.png";
+import ReactTypingEffect from "react-typing-effect";
+const skills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "GraphQL",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "Docker",
+  "AWS",
+  "Vercel",
+  "Tailwind CSS",
+  "Prisma",
+  "Jest",
+  "Cypress",
+  "Figma",
+  "Git",
+  "GitHub Actions",
+];
 
 export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4"
+      className="relative min-h-screen flex items-center overflow-hidden py-6"
     >
-      <div className="container max-w-4xl mx-auto text-center z-10">
-        <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1">
+      {/* Bg */}
+      <div className="absolute inset-0">
+        <img
+          src={Background}
+          alt="Hero image"
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+      </div>
+
+      {/* Green Dots */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <div
+            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            style={{
+              backgroundColor: "#20B2A6",
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `slow-drift ${
+                15 + Math.random() * 20
+              }s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Content */}
+          <div className="space-y-8">
+            <div className="animate-fade-in">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                Software Engineer
+              </span>
+            </div>
+
+            {/* Headline */}
+            <div className="space-y-4">
+              {/* <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Crafting <span className="text-primary glow-text">digital</span>
+                <br />
+                experiences with
+                <br />
+                <span className="font-serif italic font-normal text-white">
+                  precision.
+                </span>
+              </h1> */}
+              <h1 className="text-4xl md:text-6xl font-bold ">
+          
+            <span className="text-primary  ">
               {" "}
               Atharv
             </span>
-            <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
+            <span className="text-gradient ml-2  ">
               {" "}
               Ninave
             </span>
           </h1>
-  <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          About <span className="text-primary"> Me</span>
-        </h2>
+               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2  leading-tight mt-2">
+                          <span >I am a </span>
+                          <ReactTypingEffect
+                            text={[
+                              'Fullstack Developer',
+                             'UI/UX Designer',
+                             'Coder',
+                            ]}
+                            className='text-primary'
+                            speed={100}
+                            eraseSpeed={50}
+                            typingDelay={500}
+                            eraseDelay={2000}
+                            cursorRenderer={(cursor) => (
+                              <span className="text-primary">{cursor}</span>
+                            )}
+                          />
+                        </h3>
+              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+                I am a full-stack developer with over 2+ years of experience in
+                building scalable web applications. Skilled in both front-end
+                and back-end development, I specialize in the MERN stack and
+                other modern technologies to create seamless user experiences
+                and
+              </p>
+            </div>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-           I am a full-stack developer with over 1 years of experience in building scalable web applications. Skilled in both front-end and back-end development, I specialize in the MERN stack and other modern technologies to create seamless user experiences and efficient solutions.
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+              {/* <Button size="lg">
+                Contact Me <ArrowRight className="w-5 h-5" />
+              </Button> */}
+              <AnimatedBorderButton>
+                <Download className="w-5 h-5" />
+                <a
+                  href="https://drive.google.com/file/d/1bVb6mjF9yzwi0fdo0BR9GSuFVJyGCSrZ/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  DOWNLOAD CV
+                </a>
+              </AnimatedBorderButton>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+              <span className="text-sm text-muted-foreground">Follow me: </span>
+              {[
+                {
+                  icon: Github,
+                  href: "https://github.com/atharvninave18",
+                  label: "GitHub",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/atharv-ninave-3604b31b8",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: Twitter,
+                  href: "https://x.com/atharvv1809",
+                  label: "Twitter",
+                },
+              ].map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.href}
+                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                >
+                  {<social.icon className="w-5 h-5" />}
+                </a>
+              ))}
+            </div>
+          </div>
+          {/* Right Column - Profile Image */}
+          <div className="relatice animate-fade-in animation-delay-300">
+            {/* Profile Image */}
+            <div className="relative max-w-md mx-auto">
+              <div
+                className="absolute inset-0 
+              rounded-3xl bg-gradient-to-br 
+              from-primary/30 via-transparent 
+              to-primary/10 blur-2xl animate-pulse"
+              />
+              <div className="relative glass rounded-3xl p-2 glow-border">
+                <img
+                  src={Profile}
+                  alt="Pedro Machado"
+                  className="w-full aspect-[4/5] object-cover rounded-2xl"
+                />
+
+                {/* Floating Badge */}
+                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
+                  </div>
+                </div>
+                {/* Stats Badge */}
+                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                  <div className="text-2xl font-bold text-primary">2+</div>
+                  <div className="text-xs text-muted-foreground">
+                    Years Exp.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="mt-20 animate-fade-in animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            Technologies I work with
           </p>
-
-          <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-            <a href="#projects" className="cosmic-button">
-              View My Work
-            </a>
+          <div className="relative overflow-hidden">
+            <div
+              className="absolute left-0 top-0 bottom-0 w-32
+             bg-gradient-to-r from-background to-transparent z-10"
+            />
+            <div
+              className="absolute right-0 top-0 bottom-0 w-32
+             bg-gradient-to-l from-background to-transparent z-10"
+            />
+            <div className="flex animate-marquee">
+              {[...skills, ...skills].map((skill, idx) => (
+                <div key={idx} className="flex-shrink-0 px-8 py-4">
+                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                    {skill}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-        <span className="text-sm text-muted-foreground mb-2"> Scroll </span>
-        <ArrowDown className="h-5 w-5 text-primary" />
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 
+      animate-fade-in animation-delay-800"
+      >
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+        >
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <ChevronDown className="w-6 h-6 animate-bounce" />
+        </a>
       </div>
     </section>
   );

@@ -1,120 +1,102 @@
-import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { ThemeToggle } from "./ThemeToggle"; // 👈 import
 
-const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
-
+const navLinks = [
+  
+    { label: "Home", href: "#hero" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  // { label: "Contact", href: "#contact" },
 ];
 
 export const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMenuOpen]);
-
   return (
-    <nav
-      className={cn(
-        "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-sm" : "py-5"
-      )}
+    <header
+      className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
+        isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
+      }  z-50`}
     >
-      <div className="container flex items-center justify-between">
-        {/* left: logo */}
+      <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
-          className="text-xl font-bold text-primary"
-          href="#hero"
+          href="#"
+          className="text-xl font-bold tracking-tight hover:text-primary"
         >
-          <span className="relative z-10">
-            <span>&lt;</span>
-            <span className="text-glow text-foreground"> Atharv </span> /
-            <span className="text-glow text-foreground"> Ninave </span>
-            <span>&gt;</span>
-          </span>
+          AN<span className="text-primary">.</span>
         </a>
 
-        {/* center: nav links (desktop only) */}
-        <div className="hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
-          {navItems.map((item, key) => (
-            <a
-              key={key}
-              href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-
-        {/* right: Theme toggle (desktop) + mobile toggle */}
-        <div className="flex items-center space-x-4">
-          {/* Theme toggle button on desktop */}
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
-
-          {/* mobile toggle */}
-          <button
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="md:hidden p-2 text-foreground z-50"
-            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* mobile nav menu */}
-        <div
-          className={cn(
-            "fixed inset-0 w-screen h-screen bg-background backdrop-blur-md z-30 flex flex-col items-center justify-start pt-24 md:hidden",
-            "transition-transform duration-300",
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          )}
-        >
-          <div className="flex flex-col items-center space-y-8 text-xl w-full px-4">
-            {navItems.map((item, key) => (
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-1">
+          <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
+            {navLinks.map((link, index) => (
               <a
-                key={key}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300 w-full text-center py-2"
-                onClick={() => setIsMenuOpen(false)}
+                href={link.href}
+                key={index}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
               >
-                {item.name}
+                {link.label}
               </a>
             ))}
-            {/* Theme toggle inside mobile menu */}
-            <div className="mt-8">
-              <ThemeToggle />
-            </div>
           </div>
         </div>
-      </div>
-    </nav>
+
+        {/* CTA Button */}
+        <div className="hidden md:block">
+          <Button size="sm"> <a
+                href= "#contact"
+               
+             
+              >
+                Contact Me
+              </a></Button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-foreground cursor-pointer"
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden glass-strong animate-fade-in">
+          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            {navLinks.map((link, index) => (
+              <a
+                href={link.href}
+                key={index}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-lg text-muted-foreground hover:text-foreground py-2"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <Button onClick={() => setIsMobileMenuOpen(false)}>
+              Contact Me
+            </Button>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };

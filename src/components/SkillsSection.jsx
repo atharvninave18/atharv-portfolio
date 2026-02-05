@@ -20,7 +20,7 @@ export const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="py-16 px-4 sm:px-6 md:px-8 lg:px-[12vw] font-sans bg-secondary/10"
+      className="py-16 px-4 sm:px-6 md:px-8 lg:px-[12vw] font-sans "
     >
       {/* Section Title */}
       <div className="text-center mb-10">
